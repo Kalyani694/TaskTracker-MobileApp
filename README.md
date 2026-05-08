@@ -6,6 +6,11 @@ A full-stack Task Tracker Mobile Application built using React Native (Expo + Ty
 
 Repository Link: [https://github.com/Kalyani694/TaskTracker-MobileApp](https://github.com/Kalyani694/TaskTracker-MobileApp)
 
+## Demo Video
+
+Watch the demo video here:
+
+[Click Here to Watch Demo](https://drive.google.com/file/d/1gt0be3krNJGur6Gb_cRRCgsY7WErPACb/view?usp=sharing)
 ---
 
 # Tech Stack

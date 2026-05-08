@@ -1,67 +1,284 @@
-# Task Tracker (Expo + Express + MongoDB)
+# Task Tracker Mobile App
 
-This project contains:
+A full-stack Task Tracker Mobile Application built using React Native (Expo + TypeScript) for the frontend and Node.js + Express.js + MongoDB for the backend.
 
-- `backend` - Node.js + Express + MongoDB API with JWT auth
-- `mobile` - React Native (Expo) app with TypeScript + TanStack Query
+## GitHub Repository
 
-## 1) Backend setup
+Repository Link: [https://github.com/Kalyani694/TaskTracker-MobileApp](https://github.com/Kalyani694/TaskTracker-MobileApp)
+
+---
+
+# Tech Stack
+
+## Frontend
+
+* React Native (Expo)
+* TypeScript
+* TanStack Query
+* React Navigation
+* Axios
+
+## Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcryptjs
+
+---
+
+# Features
+
+## Authentication
+
+* User Signup
+* User Login
+* JWT-based Authentication
+* Secure Password Hashing
+* Persistent Login Session
+
+## Task Management
+
+Users can:
+
+* Create Tasks
+* View All Tasks
+* Mark Tasks as Completed
+* Edit Tasks
+* Delete Tasks
+* Pull to Refresh Task List
+
+## Task Fields
+
+Each task contains:
+
+* Title
+* Optional Description
+* Completion Status
+* Created Timestamp
+
+---
+
+# API Endpoints
+
+## Auth APIs
+
+### Signup
+
+```http
+POST /auth/signup
+```
+
+Request Body:
+
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+### Login
+
+```http
+POST /auth/login
+```
+
+Request Body:
+
+```json
+{
+  "email": "john@example.com",
+  "password": "123456"
+}
+```
+
+---
+
+## Task APIs
+
+### Get All Tasks
+
+```http
+GET /tasks
+```
+
+### Create Task
+
+```http
+POST /tasks
+```
+
+### Update Task
+
+```http
+PATCH /tasks/:id
+```
+
+### Delete Task
+
+```http
+DELETE /tasks/:id
+```
+
+---
+
+# Project Structure
+
+## Frontend Structure
+
+```bash
+frontend/
+│
+├── src/
+│   ├── api/
+│   ├── components/
+│   ├── screens/
+│   ├── navigation/
+│   ├── hooks/
+│   ├── context/
+│   ├── types/
+│   └── utils/
+│
+├── App.tsx
+└── package.json
+```
+
+## Backend Structure
+
+```bash
+backend/
+│
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── config/
+├── utils/
+├── server.js
+└── package.json
+```
+
+---
+
+# Setup Instructions
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Kalyani694/TaskTracker-MobileApp.git
+```
+
+---
+
+# Backend Setup
+
+## Navigate to Backend Folder
 
 ```bash
 cd backend
-npm install
-copy .env.example .env
 ```
 
-Update `.env` values:
+## Install Dependencies
 
-- `MONGODB_URI`
-- `JWT_SECRET`
-- `PORT` (optional, defaults to 5000)
+```bash
+npm install
+```
 
-Run backend:
+## Create .env File
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+```
+
+## Run Backend Server
 
 ```bash
 npm run dev
 ```
 
-## 2) Mobile setup
-
-In `mobile/src/api/client.ts`, update `API_BASE_URL` to your machine IP and backend port.
-
-Example:
-
-```ts
-const API_BASE_URL = "http://192.168.1.10:5000";
-```
-
-Then run:
+Backend runs on:
 
 ```bash
-cd mobile
-npm install
-npm start
+http://localhost:5000
 ```
 
-Use Expo Go on your device or emulator.
+---
 
-## Implemented Features
+# Frontend Setup
 
-- Auth APIs:
-  - `POST /auth/signup`
-  - `POST /auth/login`
-- Task APIs:
-  - `GET /tasks`
-  - `POST /tasks`
-  - `PATCH /tasks/:id`
-  - `DELETE /tasks/:id`
-- MongoDB models for users and tasks
-- Password hashing with bcrypt
-- JWT-based authentication middleware
-- React Native auth flow (signup/login/logout)
-- Token persistence with AsyncStorage
-- TanStack Query for fetch/mutations
-- Pull-to-refresh on task list
-- Empty state, loading state, error state
-- Create, edit, complete toggle, delete task
-- Task filters: all / pending / completed
+## Navigate to Frontend Folder
+
+```bash
+cd frontend
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Expo App
+
+```bash
+npx expo start
+```
+
+Scan the QR code using the Expo Go app on your mobile device.
+
+---
+
+# TanStack Query Usage
+
+TanStack Query is used for:
+
+* Fetching Tasks
+* Creating Tasks
+* Updating Tasks
+* Deleting Tasks
+* Cache Invalidation
+* Handling Loading and Error States
+
+---
+
+# UI Features
+
+* Clean and Simple UI
+* Loading Indicators
+* Error Handling
+* Pull-to-Refresh
+* Empty State Screen
+* Responsive Mobile Design
+
+---
+
+# Security
+
+* Passwords are hashed using bcryptjs
+* JWT Authentication implemented
+* Protected task routes using middleware
+
+---
+
+# Demo Video
+
+The demo video includes:
+
+* User Signup/Login
+* Task CRUD Operations
+* Task Completion Update
+* Pull-to-Refresh
+* API Integration
+* MongoDB Data Storage
+
+---
+
+# Author
+
+Kalyani Borase
